@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mssql-service
+  namespace: api
+  labels:
+    app: frontend3
+spec:
+  type: NodePort
+  ports:
+  - port: 1433
+    targetPort: 1433
+    protocol: TCP
+  selector:
+    app: frontend3
+
